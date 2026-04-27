@@ -1,6 +1,6 @@
 # GhostPass — Git Workflow & Branching Strategy
 
-> **Repository**: https://github.com/ibkmokun/ghostpass  
+> **Repository**: https://github.com/ibkmokun/ghostpass-clean  
 > **Owner**: ibkmokun (GitHub user ID: 222699865)  
 > **Default Branch**: `main`  
 > **Collaboration Model**: Trunk-based with staging gate
@@ -219,7 +219,7 @@ git push -u origin hotfix/critical-fix
 
 ```bash
 # Clone the repo
-git clone https://github.com/ibkmokun/ghostpass.git
+git clone https://github.com/ibkmokun/ghostpass-clean.git
 cd ghostpass
 
 # Configure git (one-time)

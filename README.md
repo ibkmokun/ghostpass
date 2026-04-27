@@ -72,7 +72,7 @@ When Agent A pays Agent B:
 ### Clone & Install
 
 ```bash
-git clone https://github.com/ibkmokun/ghostpass.git
+git clone https://github.com/ibkmokun/ghostpass-clean.git
 cd ghostpass
 
 # Install contract dependencies (requires Foundry)

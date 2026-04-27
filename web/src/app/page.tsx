@@ -88,7 +88,7 @@ export default function Home() {
         <p>Built for ETHGlobal OpenAgents 2026</p>
         <div className="flex justify-center gap-4 mt-4">
           <a
-            href="https://github.com/ibkmokun/ghostpass"
+            href="https://github.com/ibkmokun/ghostpass-clean"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"

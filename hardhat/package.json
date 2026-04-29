@@ -1,0 +1,21 @@
+{
+  "name": "@ghostpass/hardhat-deploy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network baseSepolia",
+    "update-resolver": "hardhat run scripts/update-resolver.ts --network baseSepolia"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
+    "@nomicfoundation/hardhat-viem": "^2.0.0",
+    "hardhat": "^2.22.0",
+    "typescript": "^5.3.0",
+    "viem": "^2.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

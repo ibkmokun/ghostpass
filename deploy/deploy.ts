@@ -37,6 +37,24 @@ const publicClient = createPublicClient({
   transport: http(RPC_URL),
 });
 
+function findImport(importPath: string) {
+  // Resolve OpenZeppelin imports
+  if (importPath.startsWith("@openzeppelin/")) {
+    const fullPath = path.join(__dirname, "node_modules", importPath);
+    if (fs.existsSync(fullPath)) {
+      return { contents: fs.readFileSync(fullPath, "utf8") };
+    }
+  }
+  // Resolve ENS imports
+  if (importPath.startsWith("@ensdomains/")) {
+    const fullPath = path.join(__dirname, "node_modules", importPath);
+    if (fs.existsSync(fullPath)) {
+      return { contents: fs.readFileSync(fullPath, "utf8") };
+    }
+  }
+  return { error: "File not found: " + importPath };
+}
+
 function compileContract(fileName: string, contractName: string) {
   const filePath = path.join(__dirname, "..", "contracts", "src", fileName);
   const source = fs.readFileSync(filePath, "utf8");
@@ -56,7 +74,7 @@ function compileContract(fileName: string, contractName: string) {
     },
   };
 
-  const output = JSON.parse(solc.compile(JSON.stringify(input)));
+  const output = JSON.parse(solc.lowlevel.compileStandard(JSON.stringify(input), findImport));
 
   if (output.errors) {
     const hasError = output.errors.some((e: any) => e.severity === "error");

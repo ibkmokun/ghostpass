@@ -72,7 +72,7 @@ When Agent A pays Agent B:
 ### Clone & Install
 
 ```bash
-git clone https://github.com/ibkmokun/ghostpass-clean.git
+git clone https://github.com/ibkmokun/ghostpass.git
 cd ghostpass
 
 # Install contract dependencies (requires Foundry)
@@ -123,11 +123,24 @@ NEXT_PUBLIC_BASE_SEPOLIA_RPC=https://sepolia.base.org
 
 ### Deploy Contracts
 
+**Option A: Using Foundry (if installed)**
 ```bash
 cd contracts
 source .env
 forge script script/DeployRegistry.s.sol --rpc-url base_sepolia --broadcast --verify
 forge script script/DeployResolver.s.sol --rpc-url base_sepolia --broadcast --verify
+```
+
+**Option B: Using Node.js (fallback)**
+```bash
+cd deploy
+npm install
+npx tsx deploy.ts
+```
+
+**Update Resolver Gateway URL:**
+```bash
+npx tsx update-resolver.ts https://your-gateway.vercel.app/resolve
 ```
 
 ### Run Gateway

@@ -33,18 +33,12 @@ const publicClient = createPublicClient({
 });
 
 async function updateResolver() {
-  const deploymentPath = path.join(__dirname, "deployment.json");
-  if (!fs.existsSync(deploymentPath)) {
-    console.error("deployment.json not found. Run deploy.ts first.");
-    process.exit(1);
-  }
+  const resolverAddress = process.argv[2] as `0x${string}`;
+  const gatewayURL = process.argv[3];
 
-  const deployment = JSON.parse(fs.readFileSync(deploymentPath, "utf8"));
-  const resolverAddress = deployment.resolver;
-  const gatewayURL = process.argv[2];
-
-  if (!gatewayURL) {
-    console.error("Usage: npx tsx update-resolver.ts https://your-gateway.vercel.app/resolve");
+  if (!resolverAddress || !gatewayURL) {
+    console.error("Usage: npx tsx update-resolver.ts <resolver-address> <gateway-url>");
+    console.error("Example: npx tsx update-resolver.ts 0xd82310576278B6962e6c977C3f2f09e433704115 https://ghostpass-gateway.vercel.app/resolve");
     process.exit(1);
   }
 

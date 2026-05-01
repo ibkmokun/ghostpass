@@ -15,42 +15,25 @@
 - `initialOwner`: `0x8816dbb42e35D9dfEFd003f6D75038EfeF856Aa2`
 
 ### GhostPassResolver
-- `gatewayURL`: `https://gateway.ghostpass.eth`
+- `gatewayURL`: `https://ghostpass-gateway.vercel.app/resolve`
 - `trustedSigner`: `0x8816dbb42e35D9dfEFd003f6D75038EfeF856Aa2`
 
 ## Live URLs
 
 | Service | URL |
 |---------|-----|
-| Frontend | https://ghostpass.vercel.app |
+| Frontend | https://ghostpass-coral.vercel.app |
 | Gateway | https://ghostpass-gateway.vercel.app |
-
-## Deployment Commands
-
-### Using Foundry (if available)
-```bash
-cd contracts
-source .env
-forge script script/DeployRegistry.s.sol --rpc-url base_sepolia --broadcast --verify
-forge script script/DeployResolver.s.sol --rpc-url base_sepolia --broadcast --verify
-```
-
-### Using Node.js Deployment Script
-```bash
-cd deploy
-npm install
-npx tsx deploy.ts
-```
 
 ## Post-Deployment Steps
 
 1. ✅ Contracts deployed to Base Sepolia
 2. ✅ Contract addresses updated in `gateway/.env`
 3. ✅ Contract addresses updated in `web/.env.local`
-4. ⬜ Deploy gateway to Vercel
-5. ⬜ Update resolver with actual gateway URL (if gateway URL changes)
-6. ⬜ Deploy frontend to Vercel
-7. ⬜ Configure `ghostpass.eth` resolver on mainnet ENS
+4. ✅ Gateway deployed to Vercel
+5. ✅ Resolver updated with actual gateway URL
+6. ✅ Frontend deployed to Vercel
+7. ⬜ Configure `ghostpass.eth` resolver on mainnet ENS (post-hackathon)
 
 ## ENS Configuration
 

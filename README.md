@@ -6,7 +6,7 @@ GhostPass gives AI agents **persistent, human-readable ENS identities** that res
 
 **Hackathon**: ETHGlobal OpenAgents 2026  
 **Tracks**: ENS — Most Creative Use of ENS + Best ENS Integration for AI Agents  
-**Live Demo**: [https://ghostpass.vercel.app](https://ghostpass.vercel.app)  
+**Live Demo**: [https://ghostpass-coral.vercel.app](https://ghostpass-coral.vercel.app)  
 **Demo Video**: [YouTube](https://youtube.com/your-video-link)  
 
 ---

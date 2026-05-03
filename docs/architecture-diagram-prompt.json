@@ -1,0 +1,348 @@
+{
+  "prompt": "Generate a professional system architecture diagram for 'GhostPass — Invisible Wallets for Autonomous Agents'. The diagram should be a dark-themed technical illustration with a purple/violet color scheme (hex #8b5cf6, #7c3aed). Use a clean, modern flat design style suitable for a Web3 hackathon demo video.",
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "background": "#0f0f1a",
+    "grid": false
+  },
+  "title": {
+    "text": "GhostPass Architecture",
+    "subtitle": "Invisible Wallets for Autonomous Agents",
+    "position": "top-center",
+    "font": "Inter, sans-serif",
+    "titleSize": 36,
+    "subtitleSize": 18,
+    "color": "#ffffff"
+  },
+  "components": [
+    {
+      "id": "agent-a",
+      "label": "Agent A (Payer)",
+      "type": "actor",
+      "shape": "rounded-rectangle",
+      "position": { "x": 100, "y": 300 },
+      "size": { "width": 180, "height": 80 },
+      "color": "#1e1e2e",
+      "borderColor": "#8b5cf6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "robot",
+      "iconColor": "#8b5cf6"
+    },
+    {
+      "id": "agent-b",
+      "label": "Agent B (Payee)",
+      "type": "actor",
+      "shape": "rounded-rectangle",
+      "position": { "x": 100, "y": 600 },
+      "size": { "width": 180, "height": 80 },
+      "color": "#1e1e2e",
+      "borderColor": "#8b5cf6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "robot",
+      "iconColor": "#8b5cf6"
+    },
+    {
+      "id": "frontend",
+      "label": "Next.js Frontend",
+      "type": "service",
+      "shape": "rounded-rectangle",
+      "position": { "x": 400, "y": 200 },
+      "size": { "width": 200, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#3b82f6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "details": ["/register", "/dashboard", "/pay/:ensName", "/discover", "/demo"],
+      "detailColor": "#94a3b8"
+    },
+    {
+      "id": "ens-registry",
+      "label": "ENS Registry",
+      "type": "blockchain",
+      "shape": "hexagon",
+      "position": { "x": 700, "y": 200 },
+      "size": { "width": 160, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#f59e0b",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "globe",
+      "iconColor": "#f59e0b",
+      "badge": "Mainnet",
+      "badgeColor": "#f59e0b"
+    },
+    {
+      "id": "ccip-resolver",
+      "label": "GhostPassResolver\n(EIP-3668 CCIP)",
+      "type": "smart-contract",
+      "shape": "rounded-rectangle",
+      "position": { "x": 700, "y": 450 },
+      "size": { "width": 200, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#10b981",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "file-code",
+      "iconColor": "#10b981",
+      "address": "0xd823...704115",
+      "addressColor": "#64748b"
+    },
+    {
+      "id": "gateway",
+      "label": "CCIP Gateway\n(Node.js / Express)",
+      "type": "service",
+      "shape": "rounded-rectangle",
+      "position": { "x": 1000, "y": 450 },
+      "size": { "width": 200, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#3b82f6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "server",
+      "iconColor": "#3b82f6",
+      "url": "ghostpass-gateway.vercel.app",
+      "urlColor": "#64748b"
+    },
+    {
+      "id": "registry-contract",
+      "label": "GhostPassRegistry",
+      "type": "smart-contract",
+      "shape": "rounded-rectangle",
+      "position": { "x": 1000, "y": 650 },
+      "size": { "width": 200, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#10b981",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "file-contract",
+      "iconColor": "#10b981",
+      "address": "0xBA18...B9d163",
+      "addressColor": "#64748b"
+    },
+    {
+      "id": "namestone",
+      "label": "NameStone API\n(Gasless Subnames)",
+      "type": "service",
+      "shape": "rounded-rectangle",
+      "position": { "x": 1300, "y": 200 },
+      "size": { "width": 180, "height": 80 },
+      "color": "#1e1e2e",
+      "borderColor": "#ec4899",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "id-card",
+      "iconColor": "#ec4899"
+    },
+    {
+      "id": "sdk",
+      "label": "GhostPass SDK\n(TypeScript)",
+      "type": "service",
+      "shape": "rounded-rectangle",
+      "position": { "x": 400, "y": 550 },
+      "size": { "width": 200, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#8b5cf6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "details": ["keys.ts", "registry.ts", "resolution.ts", "payment.ts", "recovery.ts"],
+      "detailColor": "#94a3b8"
+    },
+    {
+      "id": "stealth-derivation",
+      "label": "Stealth Address\nDerivation",
+      "type": "process",
+      "shape": "diamond",
+      "position": { "x": 1300, "y": 450 },
+      "size": { "width": 180, "height": 100 },
+      "color": "#1e1e2e",
+      "borderColor": "#f59e0b",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "key",
+      "iconColor": "#f59e0b",
+      "formula": "ECDH + keccak256",
+      "formulaColor": "#64748b"
+    },
+    {
+      "id": "blockchain",
+      "label": "Base Sepolia\n(EVM Testnet)",
+      "type": "blockchain",
+      "shape": "cylinder",
+      "position": { "x": 1600, "y": 550 },
+      "size": { "width": 180, "height": 120 },
+      "color": "#1e1e2e",
+      "borderColor": "#3b82f6",
+      "borderWidth": 2,
+      "textColor": "#ffffff",
+      "icon": "link",
+      "iconColor": "#3b82f6",
+      "chainId": "84532",
+      "chainIdColor": "#64748b"
+    }
+  ],
+  "dataFlows": [
+    {
+      "id": "flow-1",
+      "label": "1. Register Agent",
+      "from": "agent-a",
+      "to": "frontend",
+      "color": "#8b5cf6",
+      "style": "solid",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Generate keys", "Submit profile", "Mint subname"]
+    },
+    {
+      "id": "flow-2",
+      "label": "2. ENS Resolution",
+      "from": "frontend",
+      "to": "ens-registry",
+      "color": "#f59e0b",
+      "style": "solid",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Resolve agent.ens"]
+    },
+    {
+      "id": "flow-3",
+      "label": "3. CCIP Read",
+      "from": "ens-registry",
+      "to": "ccip-resolver",
+      "color": "#10b981",
+      "style": "dashed",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Revert with OffchainLookup"]
+    },
+    {
+      "id": "flow-4",
+      "label": "4. Gateway Call",
+      "from": "ccip-resolver",
+      "to": "gateway",
+      "color": "#3b82f6",
+      "style": "dashed",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["HTTP GET /resolve/:name"]
+    },
+    {
+      "id": "flow-5",
+      "label": "5. Derive Stealth Address",
+      "from": "gateway",
+      "to": "stealth-derivation",
+      "color": "#f59e0b",
+      "style": "solid",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Generate ephemeral key", "ECDH + keccak256"]
+    },
+    {
+      "id": "flow-6",
+      "label": "6. Signed Response",
+      "from": "gateway",
+      "to": "ccip-resolver",
+      "color": "#10b981",
+      "style": "dashed",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Return stealth address + signature"]
+    },
+    {
+      "id": "flow-7",
+      "label": "7. Send Payment",
+      "from": "frontend",
+      "to": "blockchain",
+      "color": "#8b5cf6",
+      "style": "solid",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Transfer to stealth address"]
+    },
+    {
+      "id": "flow-8",
+      "label": "8. Scan & Recover",
+      "from": "agent-b",
+      "to": "sdk",
+      "color": "#ec4899",
+      "style": "solid",
+      "arrowHead": "arrow",
+      "animated": true,
+      "steps": ["Scan blockchain", "Derive private key", "Sweep funds"]
+    },
+    {
+      "id": "flow-9",
+      "label": "Subname Minting",
+      "from": "frontend",
+      "to": "namestone",
+      "color": "#ec4899",
+      "style": "dotted",
+      "arrowHead": "arrow",
+      "animated": false
+    },
+    {
+      "id": "flow-10",
+      "label": "Registry Read",
+      "from": "gateway",
+      "to": "registry-contract",
+      "color": "#10b981",
+      "style": "dotted",
+      "arrowHead": "arrow",
+      "animated": false
+    }
+  ],
+  "annotations": [
+    {
+      "text": "Auto-rotating stealth address on every resolution",
+      "position": { "x": 1100, "y": 350 },
+      "fontSize": 14,
+      "color": "#f59e0b",
+      "background": "#1e1e2e",
+      "borderColor": "#f59e0b",
+      "borderRadius": 8,
+      "padding": 10
+    },
+    {
+      "text": "Same ENS name → Different address every time",
+      "position": { "x": 1100, "y": 380 },
+      "fontSize": 12,
+      "color": "#94a3b8"
+    },
+    {
+      "text": "Privacy Layer: Transaction graph is broken",
+      "position": { "x": 1400, "y": 700 },
+      "fontSize": 14,
+      "color": "#10b981",
+      "background": "#1e1e2e",
+      "borderColor": "#10b981",
+      "borderRadius": 8,
+      "padding": 10
+    }
+  ],
+  "legend": {
+    "position": "bottom-right",
+    "items": [
+      { "label": "Smart Contract", "color": "#10b981", "shape": "rounded-rectangle" },
+      { "label": "Service/API", "color": "#3b82f6", "shape": "rounded-rectangle" },
+      { "label": "Blockchain/ENS", "color": "#f59e0b", "shape": "hexagon" },
+      { "label": "Agent/Actor", "color": "#8b5cf6", "shape": "rounded-rectangle" },
+      { "label": "Cryptographic Process", "color": "#f59e0b", "shape": "diamond" }
+    ]
+  },
+  "styling": {
+    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+    "componentShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)",
+    "componentBorderRadius": 12,
+    "flowLineWidth": 2,
+    "flowAnimation": "dash",
+    "gridLines": false,
+    "darkMode": true
+  },
+  "output": {
+    "format": "png",
+    "scale": 2,
+    "transparentBackground": false
+  }
+}
